@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Гид по Здоровому Питанию | Коновалов М.С.</title>
+  <meta name="description" content="Комплексный гид по здоровому питанию: диеты, калории, БЖУ, рецепты и рекомендации" />
+  <link rel="icon" href="Resources/images/os-apple-logo.png" type="image/x-icon" />
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  
+  <!-- Fonts -->
+  <style>
+    @font-face {
+      font-family: 'Widock';
+      src: url('Resources/Fonts/Widock/Widock.otf') format('opentype');
+      font-weight: normal;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'UbuntuSansMono';
+      src: url('Resources/Fonts/Ubuntu/UbuntuSansMonoNerdFont-Regular.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+  </style>
+  
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Космический фон -->
+  <div class="space-bg" id="space"></div>
+  
+  <div class="app">
+    <!-- Главное окно -->
+    <div class="window">
+      <!-- Заголовок окна -->
+      <div class="titlebar">
+        <div class="title">
+          <img src="Resources/images/os-apple-logo.png" alt="icon">
+          <span>Гид по Здоровому Питанию</span>
+        </div>
+        <!-- Кнопка мобильного меню -->
+        <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-label="Меню">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="window-controls">
+          <div class="win-btn min"></div>
+          <div class="win-btn max"></div>
+          <div class="win-btn close"></div>
+        </div>
+      </div>
+      
+      <!-- Контент -->
+      <div class="content">
+        <!-- Навигация -->
+        <aside class="panel">
+          <div class="section-title"><i class="fas fa-compass"></i> Навигация</div>
+          <nav class="nav">
+            <a class="btn accent" href="#intro" data-section="intro">
+              <i class="fas fa-home"></i> Главная
+            </a>
+            <a class="btn" href="#diets" data-section="diets">
+              <i class="fas fa-utensils"></i> Типы Диет
+            </a>
+            <a class="btn" href="#products" data-section="products">
+              <i class="fas fa-carrot"></i> База Продуктов
+            </a>
+            <a class="btn" href="#macros" data-section="macros">
+              <i class="fas fa-chart-pie"></i> БЖУ Таблица
+            </a>
+            <a class="btn" href="#meals" data-section="meals">
+              <i class="fas fa-calendar-alt"></i> Меню на Неделю
+            </a>
+            <a class="btn" href="#tips" data-section="tips">
+              <i class="fas fa-lightbulb"></i> Советы
+            </a>
+            <a class="btn warn" href="#contact" data-section="contact">
+              <i class="fas fa-envelope"></i> Контакты
+            </a>
+          </nav>
+          
+          <div class="section-title" style="margin-top:20px;"><i class="fas fa-link"></i> Полезные ссылки</div>
+          <nav class="nav">
+            <a class="btn alt" href="https://www.who.int/ru" target="_blank">
+              <i class="fas fa-globe"></i> ВОЗ
+            </a>
+            <a class="btn alt" href="https://www.rosminzdrav.ru/" target="_blank">
+              <i class="fas fa-heartbeat"></i> Минздрав РФ
+            </a>
+          </nav>
+        </aside>
+        
+        <!-- Основной контент -->
+        <main class="stage">
+          <!-- Секция: Введение -->
+          <section id="intro" class="card active-section">
+            <h1><i class="fas fa-seedling"></i> Правильно питаешься — здорово живёшь!</h1>
+            <p>
+              Добро пожаловать в комплексный гид по здоровому питанию! Здесь вы найдёте всё необходимое для составления сбалансированного рациона:
+            </p>
+            <ul class="feature-list">
+              <li><i class="fas fa-check-circle"></i> Информацию о различных типах диет</li>
+              <li><i class="fas fa-check-circle"></i> Подробную базу продуктов с калориями и БЖУ</li>
+              <li><i class="fas fa-check-circle"></i> Готовые меню на неделю</li>
+              <li><i class="fas fa-check-circle"></i> Практические советы по питанию</li>
+            </ul>
+            
+            <div class="stat-grid">
+              <div class="stat-card">
+                <i class="fas fa-users"></i>
+                <div class="stat-number">62.5%</div>
+                <div class="stat-label">Россиян с избыточным весом</div>
+              </div>
+              <div class="stat-card">
+                <i class="fas fa-heartbeat"></i>
+                <div class="stat-number">6</div>
+                <div class="stat-label">Типов диет в базе</div>
+              </div>
+              <div class="stat-card">
+                <i class="fas fa-apple-alt"></i>
+                <div class="stat-number">200+</div>
+                <div class="stat-label">Продуктов с данными</div>
+              </div>
+            </div>
+          </section>
+          
+          <!-- Секция: Типы диет -->
+          <section id="diets" class="card">
+            <h1><i class="fas fa-utensils"></i> Типы Диет и Рационов</h1>
+            <p>Выберите подходящий тип питания в зависимости от ваших целей:</p>
+            <div id="diets-container" class="diet-grid"></div>
+          </section>
+          
+          <!-- Секция: База продуктов -->
+          <section id="products" class="card">
+            <h1><i class="fas fa-carrot"></i> База Продуктов</h1>
+            <div class="search-box">
+              <i class="fas fa-search"></i>
+              <input type="text" id="product-search" placeholder="Поиск продукта..." />
+            </div>
+            <div id="products-container"></div>
+          </section>
+          
+          <!-- Секция: БЖУ -->
+          <section id="macros" class="card">
+            <h1><i class="fas fa-chart-pie"></i> Таблица Калорий и БЖУ</h1>
+            <div class="macro-controls">
+              <button class="btn accent" data-category="all">
+                <i class="fas fa-th"></i> Все
+              </button>
+              <button class="btn" data-category="protein">
+                <i class="fas fa-drumstick-bite"></i> Белки
+              </button>
+              <button class="btn" data-category="carbs">
+                <i class="fas fa-bread-slice"></i> Углеводы
+              </button>
+              <button class="btn" data-category="fats">
+                <i class="fas fa-oil-can"></i> Жиры
+              </button>
+            </div>
+            <div id="macros-container"></div>
+          </section>
+          
+          <!-- Секция: Меню -->
+          <section id="meals" class="card">
+            <h1><i class="fas fa-calendar-alt"></i> Недельное Меню</h1>
+            <div class="meal-type-selector">
+              <button class="btn accent" data-diet="normal">Обычное питание</button>
+              <button class="btn" data-diet="diabetes1">Диабет 1 типа</button>
+              <button class="btn" data-diet="diabetes2">Диабет 2 типа</button>
+              <button class="btn" data-diet="weightloss">Похудение</button>
+              <button class="btn" data-diet="sport">Спортивное</button>
+              <button class="btn" data-diet="bulk">Набор массы</button>
+              <button class="btn" data-diet="keto">Кето-диета</button>
+            </div>
+            <div id="meals-container"></div>
+          </section>
+          
+          <!-- Секция: Советы -->
+          <section id="tips" class="card">
+            <h1><i class="fas fa-lightbulb"></i> Практические Советы</h1>
+            
+            <div class="tip-card">
+              <h3><i class="fas fa-water"></i> Пейте достаточно воды</h3>
+              <p>Рекомендуемая норма — 1.5-2 литра в день. Вода участвует во всех процессах жизнедеятельности.</p>
+            </div>
+            
+            <div class="tip-card">
+              <h3><i class="fas fa-clock"></i> Соблюдайте режим питания</h3>
+              <p>5-6 приёмов пищи в день с интервалом 3-4 часа помогают поддерживать стабильный уровень энергии.</p>
+            </div>
+            
+            <div class="tip-card">
+              <h3><i class="fas fa-balance-scale"></i> Контролируйте порции</h3>
+              <p>Используйте меньшие тарелки, ешьте медленно, прислушивайтесь к чувству насыщения.</p>
+            </div>
+            
+            <div class="tip-card">
+              <h3><i class="fas fa-apple-alt"></i> Разнообразие — ключ к успеху</h3>
+              <p>Включайте продукты из всех пищевых групп: овощи, фрукты, злаки, белковые продукты, молочные.</p>
+            </div>
+            
+            <div class="tip-card">
+              <h3><i class="fas fa-running"></i> Сочетайте с физической активностью</h3>
+              <p>Минимум 30 минут умеренной физической активности в день для поддержания здоровья.</p>
+            </div>
+          </section>
+          
+          <!-- Секция: Контакты -->
+          <section id="contact" class="card">
+            <h1><i class="fas fa-user"></i> Контактная Информация</h1>
+            
+            <div class="contact-info">
+              <div class="contact-item">
+                <i class="fas fa-user-circle"></i>
+                <div>
+                  <strong>Автор проекта</strong>
+                  <p>Коновалов Михаил Сергеевич</p>
+                </div>
+              </div>
+              
+              <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <div>
+                  <strong>Email</strong>
+                  <p><a href="mailto:mihua@stopco.ru">mihua@stopco.ru</a></p>
+                </div>
+              </div>
+              
+              <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <div>
+                  <strong>Телефон</strong>
+                  <p><a href="tel:+79539954511">+7 (953) 995-45-11</a></p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="project-info">
+              <h3><i class="fas fa-info-circle"></i> О проекте</h3>
+              <p>
+                <strong>Тип проекта:</strong> Социальный<br>
+                <strong>Цель:</strong> Пропаганда здорового питания<br>
+                <strong>Предмет:</strong> Биология
+              </p>
+            </div>
+          </section>
+          <div class="footer-title"><i class="fas fa-server"></i> prov. by stopco.ru<br><i class="fas fa-palette"></i> stylesheet by ss14.art</div>
+        </main>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Toast уведомления -->
+  <div id="toast" class="toast"></div>
+  
+  <!-- Скрипты -->
+  <script src="js/main.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/diets.js"></script>
+  <!-- Оверлей для мобильного меню -->
+  <div id="mobile-overlay" class="mobile-overlay"></div>
+</body>
+</html>
