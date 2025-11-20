@@ -27,11 +27,16 @@ cd mihua.stopco.ru
 python -m http.server 8000
 ```
 
-## 👤 Автор
+## 👤 Заказчик
 
 **Коновалов Михаил Сергеевич**
 - Email: mihua@stopco.ru
 - Телефон: +7 (953) 995-45-11
+
+## 👤 Лицензиар 
+
+**AL-S**
+- Email: als@stopco.ru
 
 ## 📄 Лицензия
 
